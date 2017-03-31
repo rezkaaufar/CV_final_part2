@@ -38,11 +38,10 @@ end
 
 end
 
-accuracy = counter / nnz(data.images.set==2);
+accuracy = counter / nnz(data.images.set==2) * 100;
 end
 
 function [predictions, accuracy] = get_predictions(data)
-
 best = train(data.trainset.labels, data.trainset.features, '-C -s 0');
 model = train(data.trainset.labels, data.trainset.features, sprintf('-c %f -s 0', best(1))); % use the same solver: -s 0
 [predictions, accuracy, ~] = predict(data.testset.labels, data.testset.features, model);
@@ -61,7 +60,6 @@ for i = 1:size(data.images.data, 4)
     
     res = vl_simplenn(net, data.images.data(:, :,:, i));
     feat = res(end-3).x; feat = squeeze(feat);
-    
     if(data.images.set(i) == 1)
         
         trainset.features = [trainset.features feat];

@@ -1,0 +1,6 @@
+prev [.2 2]
+new [1 4]
+decay 0.0001
+batch 100 
+learning rate 0.005
+epoch 50 
