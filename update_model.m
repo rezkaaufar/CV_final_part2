@@ -6,7 +6,7 @@ opts = vl_argparse(opts, varargin) ;
 %% TODO: PLAY WITH THESE PARAMETERTS TO GET A BETTER ACCURACY
 
 lr_prev_layers = [.2, 2];%0.2,2
-lr_new_layers  = [1, 4]; %1,4
+lr_new_layers  = [10, 40]; %1,4
 
 lr = lr_prev_layers ;
 
